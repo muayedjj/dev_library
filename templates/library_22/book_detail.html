@@ -1,0 +1,14 @@
+{% extends '_base.html' %}
+{% block content %}
+<header>
+    <nav>
+        <h3><a href="{% url 'book_list' %}">Books List</a></h3>
+    </nav>
+</header>
+
+<h2>Details on {{ book.title }}:</h2>
+<h2>Author: {{ book.author }}</h2>
+<p>Description: {{ book.info }}</p>
+<a href="{% url 'book_update' book.pk %}">Update Book</a>
+<a href="{% url 'book_delete' book.pk %}">Delete Book</a>
+{% endblock content %}

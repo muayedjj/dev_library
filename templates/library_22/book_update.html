@@ -1,0 +1,16 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<header>
+    <nav>
+        <h3><a href="{% url 'book_list' %}">Book List</a></h3>
+    </nav>
+</header>
+
+<h1>Update Book Profile</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form | crispy }}
+    <input type="submit" value="Save">
+</form>
+{% endblock content %}
